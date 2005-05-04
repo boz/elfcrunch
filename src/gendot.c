@@ -155,9 +155,6 @@ int dump_func_edges( func_t * func ,
          if(!(nfunc = func_at_addr( LIST_NODE_KEY(cur) )))
             error_ret("no func there",-1);
 
-         /*
-                             */
-
          printf("f%s -> f%s\n",func_get_name( func ),
                                func_get_name( nfunc ) );
 

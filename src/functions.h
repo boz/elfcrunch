@@ -4,9 +4,8 @@
 #include"bintree.h"
 #include"list.h"
 #include"elflib.h"
+#include"refmap.h"
 
-#define NODE2FROM(a) ((refmap_t*)((a)->data.data))->from
-#define NODE2TO(a)   ((refmap_t*)((a)->data.data))->to
 
 typedef struct
 {
@@ -14,11 +13,6 @@ typedef struct
    list_t * calls; /* list of functions it calls */
 } func_t ;
 
-typedef struct 
-{
-   addr_t from; /* from where? */
-   addr_t to;   /* to where?   */
-} refmap_t;
 
 int free_func( func_t * func );
 btree_t * get_func_tree();

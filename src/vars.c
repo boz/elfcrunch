@@ -181,13 +181,36 @@ int gather_vars_by_dsymtab( elf_t * elf )
    return(0);
 }
 
-int var_add_string( addr_t vma , size_t off , char * str )
+typedef struct
 {
+   addr_t startvm;
+   size_t startoff;
+} str_find_t;
+
+#define new_str_find_t() xcalloc( 1, sizeof( str_find_t ) ) 
+
+typedef int (*str_found_func) ( char * str , size_t offset , void * arg );
+
+
+int var_add_string( char * str , size_t offset , void * arg )
+{
+   str_find_t * st;
    var_t * var;
    char name[16];
+   addr_t addr;
+
+   if(!arg||!str) error_ret("null arg",-1);
+
+   st = (str_find_t*)arg;
+
+   addr = st->startvm + offset;
+   if( var_at_addr( addr ) )
+      return(0);
+
    var = new_var();
-   OBJ_SET_ADDR(var->obj,vma);
-   OBJ_SET_OFFSET( var->obj, off );
+
+   OBJ_SET_ADDR(var->obj, addr  );
+   OBJ_SET_OFFSET( var->obj, st->startoff + offset );
 
    if( strlen(str) < 16 )
    {
@@ -206,81 +229,87 @@ int var_add_string( addr_t vma , size_t off , char * str )
 }
 
 
+int find_strings_in_buffer( char * data , 
+                            size_t size , 
+                            int str_thresh,
+                            str_found_func cb , 
+                            void * cb_data
+                          )
+{
+   char * last,
+        * cur ;
+
+   if(!data ||!cb ) error_ret("null arg",-1);
+
+   last = 0;
+   cur = data;
+
+   for( cur = data ; (cur - data) < size ; cur++ )
+   {
+      if( isgraph(*cur) || *cur==' ' || *cur=='\n' )
+      {
+         if( last == 0 )
+         {
+            last = cur;
+         }
+      }
+      else if( *cur != '\0' ) /* XXX: only get null terminated ascii */
+      {
+         last = 0;
+      }
+      else
+      {
+         if( last != 0 )
+         {
+            if( (cur - last) >= str_thresh )/* we have a string */
+            {
+               if((*cb)( last , (last - data ) , cb_data )<0)
+               {
+                  error_ret("problem in cb",-1);
+               }
+            }
+            last = 0;
+         }
+      }
+   }
+   return( (cur - data) );
+}
+
+
 int gather_string_vars( elf_t * elf )
 {
+   str_find_t * st;
+   char * data;
    if( ! elf )
       error_ret("null arg",-1);
+
+   st = new_str_find_t();
 
    Elf32_Phdr * phdr;
    int count,
        i;
 
    i=0;
-
-   elfstr_t * strings = NULL;
-   size_t    strcnt   = 0;
-   size_t    strsz    = 0;
-
    while((phdr = phdr_by_type( elf , PT_LOAD , i++ ) ))
    {
-      char * data,
-           * last,
-           * cur ;
-      addr_t vma;
-      size_t size;
-      offset_t off;
 
-      vma  = phdr->p_vaddr;
-      off  = phdr->p_offset;
-      size = phdr->p_filesz;
-
-      fprintf(stderr,"new section:\n");
-      fprintf(stderr,"size=%x\n",size);
-      fprintf(stderr,"off=%x\n",off);
-      fprintf(stderr,"vma=%x\n",vma);
-      fprintf(stderr,"end section\n");
-
-      if(!(data = data_at_offset( elf , off ) ) )
+      if(!(data = data_at_offset( elf , phdr->p_offset ) )){
+         free(st);
          error_ret("can't get data",-1);
+      }
 
+      st->startvm  = phdr->p_vaddr;
+      st->startoff = phdr->p_offset;
 
-      last = 0;
-      cur = data;
-
-      for(cur=data; (cur - data) < size ;cur++)
+      if( find_strings_in_buffer(  data , phdr->p_filesz , STR_THRESH , 
+                                   var_add_string , st ) < 0 )
       {
-         if( isgraph(*cur) || *cur==' ' || *cur=='\n' )
-         {
-            if( last == 0 )
-               last = cur;
-
-         }
-         else if( *cur != '\0' ) /* XXX: only get null terminated ascii */
-         {
-            last = 0;
-         }
-         else
-         {
-            if( last != 0 )
-            {
-               if( (cur - last) >= STR_THRESH )/* we have a string */
-               {
-                  var_t * var;
-                  if(!(var = var_at_addr( vma + (last-data) )))
-                  {
-                     var_add_string( vma+(last-data),off+(last-data), last );
-                  }
-                  last=0;
-               }
-               else
-               {
-                  last = 0;
-               }
-            }
-         }
+         free(st);
+         error_ret("problem finding strings",-1);
       }
    }
 
+   free(st);
    return(0);
 }
 
