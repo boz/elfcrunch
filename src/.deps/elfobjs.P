@@ -14,7 +14,8 @@ elfobjs.o: elfobjs.c elfobjs.h elflib/elflib.h /usr/include/elf.h \
   /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h /usr/include/alloca.h edisasm.h \
   /usr/local/include/libdis.h functions.h objects.h /usr/include/string.h \
-  utils/bintree.h utils/data_structs.h utils/list.h utils/libutil.h
+  utils/bintree.h utils/data_structs.h utils/list.h utils/libutil.h \
+  refmap.h utils/utils.h
 elfobjs.c :
 elfobjs.h :
 elflib/elflib.h :
@@ -59,3 +60,5 @@ utils/bintree.h :
 utils/data_structs.h :
 utils/list.h :
 utils/libutil.h :
+refmap.h :
+utils/utils.h :

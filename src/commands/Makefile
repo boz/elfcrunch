@@ -76,7 +76,7 @@ INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/src/elflib 			  -I$(top_srcdir)/s
 
 CFLAGS = -g 
 
-libcommand_a_SOURCES =  builtins.c builtins.h commands.c commands.h help.c set.c show.c show_elf.c map.c testcommands.c
+libcommand_a_SOURCES =  builtins.c builtins.h commands.c commands.h help.c set.c show.c show_elf.c map.c funcmap.c testcommands.c
 
 mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
 CONFIG_HEADER = ../../config.h
@@ -89,7 +89,7 @@ CPPFLAGS =
 LIBS = 
 libcommand_a_LIBADD = 
 libcommand_a_OBJECTS =  builtins.o commands.o help.o set.o show.o \
-show_elf.o map.o testcommands.o
+show_elf.o map.o funcmap.o testcommands.o
 AR = ar
 COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
@@ -101,8 +101,9 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
 TAR = tar
 GZIP_ENV = --best
-DEP_FILES =  .deps/builtins.P .deps/commands.P .deps/help.P .deps/map.P \
-.deps/set.P .deps/show.P .deps/show_elf.P .deps/testcommands.P
+DEP_FILES =  .deps/builtins.P .deps/commands.P .deps/funcmap.P \
+.deps/help.P .deps/map.P .deps/set.P .deps/show.P .deps/show_elf.P \
+.deps/testcommands.P
 SOURCES = $(libcommand_a_SOURCES)
 OBJECTS = $(libcommand_a_OBJECTS)
 

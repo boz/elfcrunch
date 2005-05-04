@@ -18,4 +18,5 @@ set.c \
 show.c \
 show_elf.c \
 map.c \
+funcmap.c \
 testcommands.c

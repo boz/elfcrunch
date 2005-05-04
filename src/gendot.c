@@ -67,6 +67,9 @@ int dump_func_map( addr_t addr , int depth )
    return(0);
 }
 
+/* XXX: calling for attention.... */
+char * addr2objstr( addr_t );
+
 char * addr2dotstr( addr_t addr )
 {
    static char retstr[BUFSIZ];

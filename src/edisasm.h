@@ -8,6 +8,7 @@
 #include"common.h"
 
 typedef DISASM_CALLBACK edis_callback;
+typedef DISASM_CALLBACK edis_cb; /* XXX: should change all ... lazy */
 
 int disasm_finish();
 int disasm_init();

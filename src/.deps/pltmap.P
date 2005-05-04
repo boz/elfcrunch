@@ -34,7 +34,7 @@ pltmap.o: pltmap.c pltmap.h utils/utils.h utils/bintree.h \
   /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
   /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
   /usr/include/libxml2/libxml/xpath.h functions.h objects.h \
-  /usr/include/string.h
+  /usr/include/string.h refmap.h
 pltmap.c :
 pltmap.h :
 utils/utils.h :
@@ -104,3 +104,4 @@ xmlelflib.h :
 functions.h :
 objects.h :
 /usr/include/string.h :
+refmap.h :

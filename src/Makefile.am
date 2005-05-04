@@ -42,6 +42,10 @@ plt.h \
 elfobjs.c \
 elfobjs.h \
 gendot.c \
+refmap.c \
+refmap.h \
+mapfunc.c \
+mapfunc.h \
 xmlelflib.h
 
 elfcrunch_DEPENDENCIES = $(srcdir)/elflib/libelflib.a \

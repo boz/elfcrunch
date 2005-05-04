@@ -32,9 +32,9 @@ main.o: main.c elflib/elflib.h /usr/include/elf.h /usr/include/features.h \
   /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
   /usr/include/libxml2/libxml/xpath.h common.h functions.h objects.h \
   /usr/include/string.h utils/bintree.h utils/data_structs.h utils/list.h \
-  utils/libutil.h /usr/include/unistd.h /usr/include/bits/posix_opt.h \
-  /usr/include/bits/confname.h /usr/include/getopt.h commands/builtins.h \
-  commands/commands.h
+  utils/libutil.h refmap.h utils/utils.h /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h /usr/include/bits/confname.h \
+  /usr/include/getopt.h commands/builtins.h commands/commands.h
 main.c :
 elflib/elflib.h :
 /usr/include/elf.h :
@@ -102,6 +102,8 @@ utils/bintree.h :
 utils/data_structs.h :
 utils/list.h :
 utils/libutil.h :
+refmap.h :
+utils/utils.h :
 /usr/include/unistd.h :
 /usr/include/bits/posix_opt.h :
 /usr/include/bits/confname.h :

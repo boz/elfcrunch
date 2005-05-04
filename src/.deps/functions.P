@@ -14,7 +14,7 @@ functions.o: functions.c elflib/elflib.h /usr/include/elf.h \
   /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h /usr/include/string.h utils/bintree.h \
   utils/data_structs.h utils/list.h utils/libutil.h /usr/include/stdlib.h \
-  /usr/include/alloca.h utils/utils.h common.h edisasm.h \
+  /usr/include/alloca.h refmap.h utils/utils.h common.h edisasm.h \
   /usr/local/include/libdis.h target.h xmlelflib.h \
   /usr/include/libxml2/libxml/xpointer.h \
   /usr/include/libxml2/libxml/xmlversion.h \
@@ -75,6 +75,7 @@ utils/list.h :
 utils/libutil.h :
 /usr/include/stdlib.h :
 /usr/include/alloca.h :
+refmap.h :
 utils/utils.h :
 common.h :
 edisasm.h :

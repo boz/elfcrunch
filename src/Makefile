@@ -84,7 +84,7 @@ INCLUDES = -I$(srcdir)/elflib      			  -I/usr/include/libxml2  			  -I$(srcdir)
 
 elfcrunch_LDADD = -lxml2 -lssl -lelflib -lutils -lcommand -ldisasm
 
-elfcrunch_SOURCES =  common.h functions.c functions.h globals.h main.c objects.c objects.h target.c target.h edisasm.h edisasm.c xmlelflib.c disasm_dump.c disasm_dump.h vars.c vars.h pltmap.c pltmap.h plt.c plt.h elfobjs.c elfobjs.h gendot.c xmlelflib.h
+elfcrunch_SOURCES =  common.h functions.c functions.h globals.h main.c objects.c objects.h target.c target.h edisasm.h edisasm.c xmlelflib.c disasm_dump.c disasm_dump.h vars.c vars.h pltmap.c pltmap.h plt.c plt.h elfobjs.c elfobjs.h gendot.c refmap.c refmap.h mapfunc.c mapfunc.h xmlelflib.h
 
 
 elfcrunch_DEPENDENCIES = $(srcdir)/elflib/libelflib.a 								 $(srcdir)/utils/libutils.a   								 $(srcdir)/commands/libcommand.a
@@ -100,7 +100,8 @@ CPPFLAGS =
 LDFLAGS = 
 LIBS = 
 elfcrunch_OBJECTS =  functions.o main.o objects.o target.o edisasm.o \
-xmlelflib.o disasm_dump.o vars.o pltmap.o plt.o elfobjs.o gendot.o
+xmlelflib.o disasm_dump.o vars.o pltmap.o plt.o elfobjs.o gendot.o \
+refmap.o mapfunc.o
 testprog_OBJECTS =  testprog.o
 testprog_LDADD = $(LDADD)
 testprog_DEPENDENCIES = 
@@ -116,9 +117,9 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 TAR = tar
 GZIP_ENV = --best
 DEP_FILES =  .deps/disasm_dump.P .deps/edisasm.P .deps/elfobjs.P \
-.deps/functions.P .deps/gendot.P .deps/main.P .deps/objects.P \
-.deps/plt.P .deps/pltmap.P .deps/target.P .deps/testprog.P .deps/vars.P \
-.deps/xmlelflib.P
+.deps/functions.P .deps/gendot.P .deps/main.P .deps/mapfunc.P \
+.deps/objects.P .deps/plt.P .deps/pltmap.P .deps/refmap.P \
+.deps/target.P .deps/testprog.P .deps/vars.P .deps/xmlelflib.P
 SOURCES = $(elfcrunch_SOURCES) $(testprog_SOURCES)
 OBJECTS = $(elfcrunch_OBJECTS) $(testprog_OBJECTS)
 

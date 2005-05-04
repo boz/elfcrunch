@@ -15,7 +15,8 @@ map.o: map.c /usr/include/stdlib.h /usr/include/features.h \
   ../../src/functions.h ../../src/objects.h /usr/include/string.h \
   ../../src/utils/bintree.h /usr/include/stdint.h \
   ../../src/utils/data_structs.h ../../src/utils/list.h \
-  ../../src/utils/libutil.h ../../src/elflib/elflib.h /usr/include/elf.h
+  ../../src/utils/libutil.h ../../src/elflib/elflib.h /usr/include/elf.h \
+  ../../src/refmap.h ../../src/utils/utils.h
 map.c :
 /usr/include/stdlib.h :
 /usr/include/features.h :
@@ -58,3 +59,5 @@ commands.h :
 ../../src/utils/libutil.h :
 ../../src/elflib/elflib.h :
 /usr/include/elf.h :
+../../src/refmap.h :
+../../src/utils/utils.h :

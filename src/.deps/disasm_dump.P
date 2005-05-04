@@ -15,8 +15,9 @@ disasm_dump.o: disasm_dump.c disasm_dump.h edisasm.h \
   /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h /usr/include/alloca.h objects.h \
   /usr/include/string.h utils/utils.h utils/bintree.h \
-  utils/data_structs.h utils/list.h utils/libutil.h functions.h vars.h \
-  globals.h target.h xmlelflib.h /usr/include/libxml2/libxml/xpointer.h \
+  utils/data_structs.h utils/list.h utils/libutil.h functions.h refmap.h \
+  vars.h globals.h target.h xmlelflib.h \
+  /usr/include/libxml2/libxml/xpointer.h \
   /usr/include/libxml2/libxml/xmlversion.h \
   /usr/include/libxml2/libxml/xmlexports.h \
   /usr/include/libxml2/libxml/tree.h \
@@ -80,6 +81,7 @@ utils/data_structs.h :
 utils/list.h :
 utils/libutil.h :
 functions.h :
+refmap.h :
 vars.h :
 globals.h :
 target.h :

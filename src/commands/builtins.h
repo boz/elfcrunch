@@ -4,6 +4,7 @@
 int register_show();
 int register_set();
 int register_map();
+int register_funcmap();
 
 int register_builtins();
 int register_elf_commands();
