@@ -1,0 +1,164 @@
+			xmlAddDocEntity		(xmlDocPtr doc,
+			xmlAddDtdEntity		(xmlDocPtr doc,
+			xmlGetDocEntity		(xmlDocPtr doc,
+			xmlGetDtdEntity		(xmlDocPtr doc,
+			xmlGetParameterEntity	(xmlDocPtr doc,
+			xmlEncodeEntities	(xmlDocPtr doc,
+			xmlEncodeEntitiesReentrant(xmlDocPtr doc,
+			xmlEncodeSpecialChars	(xmlDocPtr doc,
+    xmlDocPtr           myDoc;        /* the document being built */
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+XMLPUBFUN xmlDocPtr XMLCALL	
+		xmlParseBalancedChunkMemory(xmlDocPtr doc,
+		xmlParseBalancedChunkMemoryRecover(xmlDocPtr doc,
+		xmlParseExternalEntity	(xmlDocPtr doc,
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+XMLPUBFUN xmlDocPtr XMLCALL
+typedef xmlDocPtr htmlDocPtr;
+		htmlDocDumpMemory	(xmlDocPtr cur,
+					 xmlDocPtr cur);
+					 xmlDocPtr cur);
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr cur,
+					 xmlDocPtr cur,
+					 xmlDocPtr doc,
+					 xmlDocPtr cur,
+					 xmlDocPtr cur,
+					 xmlDocPtr doc,
+				 xmlDocPtr doc);
+				 xmlDocPtr doc);
+				 xmlDocPtr doc);
+				 xmlDocPtr doc);
+    xmlDocPtr doc;
+	xmlShell		(xmlDocPtr doc,
+typedef xmlDoc *xmlDocPtr;
+		xmlCreateIntSubset	(xmlDocPtr doc,
+		xmlNewDtd		(xmlDocPtr doc,
+		xmlGetIntSubset		(xmlDocPtr doc);
+		xmlNewGlobalNs		(xmlDocPtr doc,
+XMLPUBFUN xmlDocPtr XMLCALL 	
+		xmlFreeDoc		(xmlDocPtr cur);
+		xmlNewDocProp		(xmlDocPtr doc,
+XMLPUBFUN xmlDocPtr XMLCALL	
+		xmlCopyDoc		(xmlDocPtr doc,
+		xmlNewDocNode		(xmlDocPtr doc,
+		xmlNewDocNodeEatName	(xmlDocPtr doc,
+		xmlNewDocRawNode	(xmlDocPtr doc,
+		xmlNewDocText		(xmlDocPtr doc,
+		xmlNewDocPI		(xmlDocPtr doc,
+		xmlNewDocTextLen	(xmlDocPtr doc,
+		xmlNewDocComment	(xmlDocPtr doc,
+		xmlNewCDataBlock	(xmlDocPtr doc,
+		xmlNewCharRef		(xmlDocPtr doc,
+		xmlNewReference		(xmlDocPtr doc,
+					 xmlDocPtr doc,
+		xmlDocCopyNodeList	(xmlDocPtr doc,
+		xmlNewDocFragment	(xmlDocPtr doc);
+		xmlDocGetRootElement	(xmlDocPtr doc);
+		xmlDocSetRootElement	(xmlDocPtr doc,
+					 xmlDocPtr doc);
+					 xmlDocPtr doc);
+		xmlSearchNs		(xmlDocPtr doc,
+		xmlSearchNsByHref	(xmlDocPtr doc,
+		xmlGetNsList		(xmlDocPtr doc,
+		xmlStringGetNodeList	(xmlDocPtr doc,
+		xmlStringLenGetNodeList	(xmlDocPtr doc,
+		xmlNodeListGetString	(xmlDocPtr doc,
+		xmlNodeListGetRawString	(xmlDocPtr doc,
+		xmlNodeGetBase		(xmlDocPtr doc,
+					 xmlDocPtr doc,
+		xmlReconciliateNs	(xmlDocPtr doc,
+		xmlDocDumpFormatMemory	(xmlDocPtr cur,
+		xmlDocDumpMemory	(xmlDocPtr cur,
+		xmlDocDumpMemoryEnc	(xmlDocPtr out_doc,
+		xmlDocDumpFormatMemoryEnc(xmlDocPtr out_doc,
+					 xmlDocPtr cur,
+					 xmlDocPtr cur);
+					 xmlDocPtr doc,
+					 xmlDocPtr cur);
+					 xmlDocPtr cur,
+					 xmlDocPtr doc,
+					 xmlDocPtr cur,
+					 xmlDocPtr cur,
+					 xmlDocPtr doc,
+					 xmlDocPtr cur,
+					 xmlDocPtr cur,
+		xmlGetDocCompressMode	(xmlDocPtr doc);
+		xmlSetDocCompressMode	(xmlDocPtr doc,
+    xmlDocPtr doc;			/* The current document */
+		    xmlXPathNewContext		(xmlDocPtr doc);
+		    xmlXPathOrderDocElems	(xmlDocPtr doc);
+		    xmlXPtrNewContext		(xmlDocPtr doc,
+		xmlXIncludeProcess	(xmlDocPtr doc);
+		xmlXIncludeProcessFlags	(xmlDocPtr doc,
+		xmlXIncludeNewContext	(xmlDocPtr doc);
+ * xmlChar *	xmlNodeGetBase	(xmlDocPtr doc,
+    xmlDocPtr              doc;       /* the document */
+					xmlDocPtr doc,
+		xmlGetID	       (xmlDocPtr doc,
+		xmlIsID		       (xmlDocPtr doc,
+		xmlRemoveID	       (xmlDocPtr doc, 
+					xmlDocPtr doc,
+		xmlIsRef	       (xmlDocPtr doc,
+		xmlRemoveRef	       (xmlDocPtr doc, 
+		xmlGetRefs	       (xmlDocPtr doc,
+					 xmlDocPtr doc);
+					 xmlDocPtr doc,
+		xmlValidNormalizeAttributeValue(xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc);
+					 xmlDocPtr doc);
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc);
+					 xmlDocPtr doc,
+		xmlIsMixedElement	(xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+		xlinkIsLink		(xmlDocPtr doc,
+    xmlDocPtr doc;
+typedef xmlDocPtr docbDocPtr;
+XMLPUBFUN xmlDocPtr XMLCALL	
+		xmlC14NDocSaveTo	(xmlDocPtr doc,
+		xmlC14NDocDumpMemory	(xmlDocPtr doc,
+		xmlC14NDocSave		(xmlDocPtr doc,
+		xmlC14NExecute		(xmlDocPtr doc,
+	    xmlSchemaNewDocParserCtxt	(xmlDocPtr doc);
+					 xmlDocPtr instance);
+XMLPUBFUN xmlDocPtr XMLCALL	
+		xmlReaderWalker		(xmlDocPtr doc);
+					 xmlDocPtr doc);
+		    xmlRelaxNGNewDocParserCtxt	(xmlDocPtr doc);
+					 	 xmlDocPtr doc);
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+					 xmlDocPtr doc,
+        xmlNewTextWriterDoc(xmlDocPtr * doc, int compression);
+        xmlNewTextWriterTree(xmlDocPtr doc, xmlNodePtr node,
+					 xmlDocPtr doc);

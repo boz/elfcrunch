@@ -1,0 +1,24 @@
+preorder:
+10	ten
+05	five
+03	three
+08	eight
+15	fifteen
+12	twelve
+20	twenty
+inorder:
+05	five
+03	three
+08	eight
+10	ten
+15	fifteen
+12	twelve
+20	twenty
+postorder:
+15	fifteen
+12	twelve
+20	twenty
+05	five
+03	three
+08	eight
+10	ten

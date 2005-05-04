@@ -1,0 +1,3 @@
+builtins.o: builtins.c builtins.h
+builtins.c :
+builtins.h :

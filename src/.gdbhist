@@ -1,0 +1,900 @@
+bt
+ls
+ls
+quit
+bt
+info args
+quit
+set args -f ./elfcrunch 
+r
+quit
+quit
+set args -f ./kasdfasd
+r
+set args -f ./elfcrunch
+r
+r
+r
+break insert_command
+r
+s
+quit
+set args test1
+break insert_command
+r
+quit
+set args test1
+r
+break insert_command
+r
+c
+x comm
+print comm
+print *comm
+quit
+break insert_command
+set args test1
+r
+c
+print *comm
+s
+n
+print path
+s
+print *comm
+print head
+print *head
+s
+r
+break register_command
+r
+c
+msi
+s
+set args test1 test2
+r
+c
+c
+c
+c
+r
+c
+r
+r
+c
+s
+c
+r
+c
+s
+print path
+s
+print path
+print path
+s
+print path
+s
+print path
+r
+c
+r
+c
+r
+c
+c
+s
+n
+s
+print nextstr
+s
+bt
+r
+c
+s
+n
+s
+print head
+print *heada
+print *head
+print head->opts
+print *(head->opts)
+print (*(head->opts))->cmd
+print head->opts->cmd
+print head->opts->cmd->str
+s
+s
+print path
+s
+print path
+print nextstr
+set *nextstr = 0
+s
+bt
+r
+c
+bt
+r
+c
+r
+c
+c
+s
+quit
+set args -f ./elfcrunch show
+break xmlelf_set_size
+r
+print xe
+print xe->doc
+quit
+quit
+set args -f ./elfcrunch show
+break xmlelf_is_valid_info
+r
+print x
+print xe
+print xe->root
+print xe->elf
+quit
+break xmlelf_is_valid_info
+r
+set args -f ./elfcrunch show
+r
+print xe->root->name
+s
+s
+print xe->root->name
+quit
+set args -f ./elfcrunch show
+break open_target_info
+r
+s
+s
+print INFO_EXT
+print elf->name
+n
+n
+print infoname 
+print strlen( elf->name )
+print strlen( INFO_EXT )
+print strlen( infoname )
+quit
+quit
+break insert_command 
+set args -f ./elfcrunch show ehdr
+r
+c
+print head
+print *head
+print head->opts
+print *head->opts
+s
+print head->opts
+print head
+print *head
+print head->cmd->str
+print opts->cmd->str
+print *opts
+print head->opts
+print head->opts->str
+print head->opts->cmd->str
+quit
+set args -f ./elfcrunch show ehdr
+break insert_command
+r
+c
+s
+print path
+print path+1
+s
+print path+1
+print path+1
+s
+s
+s
+print head->cmd->str
+s
+print head->cmd->str
+print head
+s
+print head
+print head->cmd->str
+print head->opts->cmd->str
+quit
+break insert_command
+r
+set args -f ./elfcrunch set
+r
+print head->cmd
+print head->args
+print head->arg
+print *head
+print head->opts
+print head->opts->cmd->str
+print comm->str
+s
+print head->opts
+print head->opts->cmd
+print head->opts->cmd->str
+print comm->str
+s
+s
+print cur
+s
+print last
+print last->cmd->str
+s
+print last->next->cmd->str
+print head->next->cmd->str
+print head->cmd->str
+s
+s
+s
+print command_head
+print command_head.opts->cmd->str
+s
+print nextstr
+s
+print path+!
+print path+1
+s
+print head->cmd->str
+s
+print nextstr
+print nextnode
+print *nextnode
+s
+print head->opts
+print comm->str
+n
+print head->opts
+print head->opts->str
+print head->opts->cmd->str
+n
+c
+s
+print head->opts
+print head->opts
+print head->opts->str
+print head->opts->cmd->str
+print head->next->opts->cmd->str
+print head->opts->next->cmd->str
+print head->opts->next->next->cmd->str
+print head->next
+print *head->next
+c
+quit
+bt
+ls
+quit
+r
+set args -f ./testprog help show
+r
+print cur->cmd
+print cur
+break do_help
+r
+print head
+print head->msg
+print head->cmd->msg
+print head->cmd
+print head->opts->cmd
+print head->opts->cmd->msg
+s
+print cur->cmd
+print cur->cmd->str
+print argv[0]
+s
+print argv
+print argv+1
+print *(argv+1)
+s
+print head->cmd
+print head->cmd->str
+print argv[0]
+s
+quit
+set args -f testprog show sht
+r
+quit
+set args -R ./testprog
+r
+bt
+break dump_dt_rel
+r
+s
+n
+print typestr
+n
+print name
+print indx
+n
+print indx
+quit
+set args -f ./elfcrunch 
+set args -f ./elfcrunch -R
+r
+bt
+break dump_dreloc
+r
+s
+n
+print rel
+print *rel
+n
+s
+s
+s
+s
+print num
+print size
+print entsize
+print num
+s
+print num
+s
+n
+n
+s
+n
+print typestr
+print indx
+s
+s
+print indx
+s
+print indx
+s
+print indx
+s
+print elf
+print indx
+s
+print elf->dsymtab
+s
+n
+print dyn
+print *dyn
+n
+print dsymtab
+print *dsymtab
+n
+n
+r
+break dsym_name_by_index
+r
+c
+s
+print indx
+print elf
+s
+s
+print elf->dsymtab
+s
+n
+print dyn
+print dyn->d_un.d_ptr
+x dyn->d_un.d_ptr
+print dyn
+info file
+s
+print addr
+s
+s
+print vma
+x/w vma
+bt
+quit
+set arts -f ./elfcrunch -R
+set args -f ./elfcrunch -R
+break  rel_max_dsym_indx
+r
+s
+n
+s
+print num
+print elf
+print elf->rel_size / elf->rel_entsize
+s
+print tmp
+s
+print tmp
+s
+print tmp
+s
+print maxindx
+break get_dsymcount
+r
+s
+n
+print relpltsc
+n
+print relsc
+r
+s
+n
+print relpltsc
+print relsc
+n
+c
+quit
+set args -f ./testprog -F
+r
+bt
+break btree_insert
+r
+print data
+print data->data
+print data->data->name
+print (func_t *)data->data->name
+print (func_t *)data->data
+print ((func_t *)data->data)->name
+print ((func_t *)data->data)
+print ((func_t *)data->data)->obj->name
+print ((func_t *)data->data)->obj->addr
+break dump_one_func
+r
+c
+print tree
+print *tree
+print tree->root
+print *tree->root
+print tree->root->data->obj->name
+print (tree->root->data->data
+print ((func_t *)tree->root->data->data)->obj->name
+s
+c
+delete 1
+r
+s
+print func
+print *func
+print func->obj
+print func->obj->name
+print *(func->obj)
+fg
+quit
+bt
+break edisasm_addr_range
+set args -f ./testprog -D
+r
+s
+n
+print data
+x/10i data
+printf "%d\n",(end-start)
+s
+quit
+set args -f ./testprog -D
+break dump_insn
+r
+n
+s
+x addr
+s
+s
+x addr
+s
+s
+s
+n
+x addr
+s
+x key
+s
+n
+print cur->data.key
+x cur->data.key
+s
+s
+s
+print dat
+print data
+print data->data
+print *data
+x data->key
+x *data->key
+print data
+print (func_t*)data
+print *(func_t*)data
+print *(func_t*)data->obj
+print (*(func_t*)data).obj
+print (*(func_t*)data).obj->name
+set args -f ./testprog -v
+break gather_vars_by_symtab
+r
+s
+s
+n
+n
+n
+print type
+print ntype
+n
+print ntype
+help break
+help breakpoints
+n
+bt
+n
+c
+r
+s
+n
+print sym->st_value
+x sym->st_value
+watch sym->st_value == 0x8049620
+c
+s
+print sym->st_value
+x sym->st_value
+s
+n
+print sym->st_name
+s
+n
+n
+n
+r
+s
+n
+watch sym->st_value == 0x8049620
+c
+s
+s
+n
+n
+print name
+n
+print var
+print *var
+print var->obj
+print var->obj->name
+n
+n
+print var->obj
+print var->obj->str
+print *var->obj
+s
+s
+s
+x addr
+n
+x addr
+n
+n
+print data
+print data->key
+s
+print data->key
+print *data
+print *var
+s
+print data->key
+print *var
+s
+print tree
+print tree->root
+print *tree->root
+s
+print data
+print *data
+print data->data
+print data->data->name
+print *data->data
+print (var_t*)*data->data
+print *((var_t*)data->data)
+print *((var_t*)data->data)->obj
+s
+s
+s
+n
+n
+n
+n
+print data
+print *data
+n
+print root->lchld
+print root->lchld->data
+print root->lchld->data->data
+print (var_t*)root->lchld->data->data
+print ((var_t*)root->lchld->data->data)
+print ((var_t*)root->lchld->data->data)->name
+print ((var_t*)root->lchld->data->data).name
+s
+q
+bt
+print data
+print data->data
+print (plt_map_t*)data->data
+print (plt_map_t*)data
+print *(plt_map_t*)data
+quit
+bt
+print node
+print (node==NULL)
+print (node==0)
+print list
+print *list
+print node
+x key
+quit
+quit
+bt
+quit
+bt
+break gather_funcs_by_section
+set args -f ./testprog -D
+r
+s
+n
+n
+n
+n
+n
+n
+print curfrom
+print (curfrom->data)
+n
+print (curto->data)
+print (funcmap_t*)(curto->data)
+print (refmap_t*)(curto->data)
+print (refmap_t*)(curto->data)
+print (refmap_t*)(curfrom->data)
+s
+print curto
+print curto->data
+print *curto->data
+print *(curto->data)
+print (refmap_t*)(curfrom->data)
+n
+n
+print curfrom
+print (refmap_t*)(curfrom->data)
+print (refmap_t*)(curfrom->next->data)
+print (refmap_t*)(curfrom->next->next->data)
+print (refmap_t*)(curfrom->next->next->next->data)
+print (refmap_t*)(curfrom->next->next->next->next->data)
+quit
+break map_functions
+set args -f ./testprog -D
+r
+n
+c
+n
+watch insn->type == insn_call
+c
+c
+delete 1
+c
+r
+print a
+print *a
+print *a
+bt
+exit
+quit
+bt
+print func
+break func_has_name
+set args -f ./testprog -M
+r
+s
+print func
+print ff
+print func->obj
+print *func->obj
+print ff->name
+quit
+bt
+set args -f ./testprog -M
+set args -f ./testprog -M
+r
+r
+bt
+break func_has_name
+r
+s
+print func->obj
+s
+s
+print func
+print ff
+print (func_t *)0x805fde0
+print (func_t *)0x805fde0->obj
+print (func_t *)0x805fde0->obj
+print (func_t *)0x805fde0
+quit
+bt
+break func_has_name
+set args -f ./testprog -M
+r
+c
+r
+c
+s
+s
+print str
+print func
+print func->obj
+print func->obj->name
+print *func->obj
+quit
+bt
+break func_has_name
+r
+set args -f ./testprog -M
+r
+c
+s
+s
+print ff
+print ff->name
+print str
+print func
+print *func
+print func->calls
+print func->obj
+print *func->obj
+bt
+break btree_traverse
+r
+s
+s
+print bt
+print bt->root
+print root
+print btree->root
+print bt->root
+print *bt->root
+print (*bt->root)->data
+print ((*bt->root)->data)
+print (func_t*)(((*bt->root)->data)->data)
+print *(func_t*)(((*bt->root)->data)->data)
+print (func_t*)(((*bt->root)->data)->data)->obj
+print ((func_t*)(((*bt->root)->data)->data))->obj
+print *((func_t*)(((*bt->root)->data)->data))->obj
+print bt->root
+print bt->root
+print *((func_t*)(((*bt->root->rchld)->data)->data))->obj
+print *((func_t*)(((*bt->root->rchld->rchld)->data)->data))->obj
+print *((func_t*)(((*bt->root->lchld)->data)->data))->obj
+print *((func_t*)(((*bt->root->lchld->lchld)->data)->data))->obj
+print *((func_t*)(((*bt->root->lchld->lchld)->data)->data))
+print *((func_t*)(((*bt->root->lchld->)->data)->data))->obj
+print *((func_t*)(((*bt->root->lchld)->data)->data))->obj
+r
+s
+n
+s
+print node
+print *((func_t*)(((node)->data)->data))->obj
+s
+print *((func_t*)(((node)->data)->data))->obj
+s
+print *((func_t*)(((node)->data)->data))->obj
+print *((func_t*)(((node)->data)->data))->obj
+print *((func_t*)(((node)->data)->data))->obj
+print node
+print node->data
+s
+print node->data
+print *((func_t*)(((node)->data)->data))->obj
+n
+s
+print node->data
+print *((func_t*)(((node)->data)->data))->obj
+s
+s
+print *((func_t*)(((node)->data)->data))->obj
+s
+print *((func_t*)(((node)->data)->data))->obj
+s
+print *((func_t*)(((node)->data)->data))->obj
+s
+print *((func_t*)(((node)->data)->data))->obj
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+n
+print *((func_t*)(((node)->data)->data))->obj
+n
+s
+r
+c
+bt
+break func_has_name
+bt
+q
+set args -f ./testprog -M
+r
+break print_func_map
+r
+s
+s
+s
+print key
+s
+q
+break dump_func_edges
+set args -f ./testprog -M
+r
+s
+n
+s
+n
+n
+n
+print func
+print *func
+n
+s
+s
+n
+print addr
+x addr
+x/i addr
+x/100i addr
+s
+n
+print func
+print nfunc
+c
+s
+print func
+prin func->obj
+print *func->obj
+x *func->obj.addr
+x *func->obj
+print *func->obj
+p *func->obj.addr
+print *func->obj
+print *func->obj->addr
+print func->obj->addr
+x func->obj->addr
+s
+s
+~
+n
+x addr
+bt
+x addr
+vt
+bt
+r
+s
+n
+print func->obj->addr
+x func->obj->addr
+quit
+set args -s ./testprog -D
+break gather_string_vars
+r
+s~
+n
+n
+quit
+set args -s ./testprog -D
+break gather_string_vars
+r
+s
+n
+print data
+x data
+x addr
+x off
+n
+x cur
+x/10i cur
+quit

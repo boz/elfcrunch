@@ -1,0 +1,133 @@
+autoscan: warning: missing AC_CHECK_FUNCS([memset]) wanted by: 
+	lib/elflib/elflib.c:17
+	lib/asmelflib/asmelflib.c:13
+autoscan: warning: missing AC_CHECK_FUNCS([munmap]) wanted by: 
+	lib/elflib/elflib.c:39
+autoscan: warning: missing AC_CHECK_FUNCS([strdup]) wanted by: 
+	lib/elflib/elflib.c:66
+	lib/xmlelflib/xmlelflib.c:90
+	lib/xmlelflib/xmlelf_open.c:94
+	lib/xmlelflib/xmlelf_open.c:120
+autoscan: warning: missing AC_CHECK_HEADERS([fcntl.h]) wanted by: 
+	lib/elflib/elflib.c:3
+autoscan: warning: missing AC_CHECK_HEADERS([stdlib.h]) wanted by: 
+	lib/elflib/elflib.c:2
+	lib/elflib/strings.c:2
+	lib/elflib/elfdump.c:3
+	lib/asmelflib/asm_plt.c:4
+	lib/asmelflib/asmelflib.c:2
+autoscan: warning: missing AC_CHECK_HEADERS([string.h]) wanted by: 
+	lib/elflib/elflib.c:7
+autoscan: warning: missing AC_CHECK_HEADERS([unistd.h]) wanted by: 
+	lib/elflib/elfdump.c:4
+autoscan: warning: missing AC_C_CONST wanted by: 
+	lib/xmlelflib/xmlelflib.c:24
+	lib/xmlelflib/xmlelflib.c:47
+	lib/xmlelflib/xmlelf_open.c:25
+	lib/xmlelflib/xmlelf_open.c:48
+	lib/xmlelflib/xmlelf_open.c:48
+	lib/xmlelflib/xmlelf_open.c:71
+	lib/xmlelflib/xmlelf_open.c:71
+autoscan: warning: missing AC_FUNC_MALLOC wanted by: 
+	lib/elflib/elflib.c:14
+	lib/asmelflib/asmelflib.c:12
+autoscan: warning: missing AC_FUNC_MEMCMP wanted by: 
+	lib/elflib/ehdr.c:57
+	lib/xmlelflib/xmlelflib.c:35
+	lib/xmlelflib/xmlelf_open.c:36
+autoscan: warning: missing AC_FUNC_MMAP wanted by: 
+	lib/elflib/elflib.c:60
+autoscan: warning: missing AC_FUNC_REALLOC wanted by: 
+	lib/elflib/strings.c:66
+	lib/elflib/strings.c:87
+	lib/asmelflib/asm_plt.c:262
+	lib/asmelflib/asm_plt.c:271
+autoscan: warning: missing AC_HEADER_STDC wanted by: 
+	lib/elflib/elflib.c:2
+	lib/elflib/strings.c:2
+	lib/elflib/elfdump.c:3
+	lib/asmelflib/asm_plt.c:4
+	lib/asmelflib/asmelflib.c:2
+	lib/elflib/elflib.c:7
+	lib/elflib/elflib.c:17
+	lib/asmelflib/asmelflib.c:13
+autoscan: warning: missing AC_PREREQ wanted by: 
+	autoscan
+autoscan: warning: missing AC_PROG_CC wanted by: 
+	lib/elflib/elflib.h
+	lib/elflib/reloc.c
+	lib/elflib/elflib.c
+	lib/elflib/crunchelflib.h
+	lib/elflib/strings.c
+	lib/elflib/symtab.c
+	lib/elflib/ehdr.c
+	lib/elflib/dynamic.c
+	lib/elflib/phdr.c
+	lib/elflib/strtab.c
+	lib/elflib/shdr.c
+	lib/elflib/rel_plt.c
+	lib/elflib/elfcrunch.h
+	lib/elflib/elfdump.c
+	lib/xmlelflib/xmlelflib.c
+	lib/xmlelflib/xmlelflib.h
+	lib/xmlelflib/xmlelf_open.c
+	lib/asmelflib/asm_dis.c
+	lib/asmelflib/asm_plt.c
+	lib/asmelflib/asmelflib.c
+	lib/asmelflib/asmelflib.h
+autoscan: warning: missing AC_PROG_INSTALL wanted by: 
+	lib/elflib/Makefile:30
+autoscan: warning: missing AC_PROG_RANLIB wanted by: 
+	lib/elflib/Makefile:20
+autoscan: warning: missing AC_TYPE_SIZE_T wanted by: 
+	lib/elflib/elflib.h:22
+	lib/elflib/elflib.h:34
+	lib/elflib/elflib.h:37
+	lib/elflib/elflib.h:40
+	lib/elflib/elflib.h:41
+	lib/elflib/elflib.h:45
+	lib/elflib/elflib.h:46
+	lib/elflib/elflib.h:49
+	lib/elflib/elflib.h:50
+	lib/elflib/elflib.h:67
+	lib/elflib/elflib.h:89
+	lib/elflib/elflib.h:128
+	lib/elflib/elflib.h:129
+	lib/elflib/elflib.h:133
+	lib/elflib/elflib.h:134
+	lib/elflib/reloc.c:138
+	lib/elflib/reloc.c:139
+	lib/elflib/reloc.c:141
+	lib/elflib/reloc.c:179
+	lib/elflib/reloc.c:180
+	lib/elflib/reloc.c:182
+	lib/elflib/elflib.c:13
+	lib/elflib/elflib.c:46
+	lib/elflib/elflib.c:101
+	lib/elflib/strings.c:23
+	lib/elflib/strings.c:24
+	lib/elflib/strings.c:32
+	lib/elflib/strings.c:96
+	lib/elflib/strings.c:121
+	lib/elflib/symtab.c:8
+	lib/elflib/phdr.c:68
+	lib/elflib/strtab.c:9
+	lib/elflib/strtab.c:33
+	lib/elflib/shdr.c:28
+	lib/elflib/rel_plt.c:8
+	lib/elflib/rel_plt.c:9
+	lib/xmlelflib/xmlelflib.c:137
+	lib/xmlelflib/xmlelflib.c:152
+	lib/xmlelflib/xmlelflib.c:188
+	lib/xmlelflib/xmlelflib.h:13
+	lib/xmlelflib/xmlelflib.h:14
+	lib/xmlelflib/xmlelf_open.c:154
+	lib/xmlelflib/xmlelf_open.c:171
+	lib/xmlelflib/xmlelf_open.c:211
+	lib/asmelflib/asm_dis.c:56
+	lib/asmelflib/asm_dis.c:91
+	lib/asmelflib/asm_plt.c:33
+	lib/asmelflib/asm_plt.c:221
+	lib/asmelflib/asm_plt.c:281
+	lib/asmelflib/asmelflib.h:20
+	lib/asmelflib/asmelflib.h:23

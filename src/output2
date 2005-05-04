@@ -1,0 +1,10 @@
+new section:
+size=5cb
+off=0
+vma=8048000
+end section
+new section:
+size=160
+off=5e0
+vma=80495e0
+end section

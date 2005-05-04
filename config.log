@@ -1,0 +1,34 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:558: checking for a BSD compatible install
+configure:611: checking whether build environment is sane
+configure:668: checking whether make sets ${MAKE}
+configure:714: checking for working aclocal-1.4
+configure:727: checking for working autoconf
+configure:740: checking for working automake-1.4
+configure:753: checking for working autoheader
+configure:766: checking for working makeinfo
+configure:787: checking for gcc
+configure:900: checking whether the C compiler (gcc  ) works
+configure:916: gcc -o conftest    conftest.c  1>&5
+configure:942: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:947: checking whether we are using GNU C
+configure:975: checking whether gcc accepts -g
+configure:1018: checking for a BSD compatible install
+configure:1073: checking for ranlib
+configure:1107: checking how to run the C preprocessor
+configure:1187: checking for ANSI C header files
+configure:1294: checking for fcntl.h
+configure:1294: checking for stdlib.h
+configure:1294: checking for string.h
+configure:1294: checking for unistd.h
+configure:1333: checking for working const
+configure:1408: checking for size_t
+configure:1444: checking for 8-bit clean memcmp
+configure:1483: checking for unistd.h
+configure:1522: checking for getpagesize
+configure:1575: checking for working mmap
+configure:1749: checking for memset
+configure:1749: checking for munmap
+configure:1749: checking for strdup

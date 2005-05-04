@@ -1,0 +1,42 @@
+<!-- dtd for an elf --> 
+
+<!ELEMENT object>
+<!ATTLIST object offset CDATA >     <!-- offset in file -->
+<!ATTLIST object vma    CDATA >     <!-- runtime vma    -->
+<!ATTLIST object size   CDATA >     <!-- size in bytes  -->
+
+<!ELEMENT ehdr (object)>
+<!ATTLIST ehdr e_ident CDATA #REQUIRED> 
+<!ATTLIST ehdr e_type CDATA #REQUIRED>
+<!ATTLIST ehdr e_type CDATA #REQUIRED>
+<!ATTLIST ehdr e_machine CDATA #REQUIRED>
+<!ATTLIST ehdr e_version CDATA #REQUIRED>
+<!ATTLIST ehdr e_entry CDATA #REQUIRED>
+<!ATTLIST ehdr e_phoff CDATA #REQUIRED>
+<!ATTLIST ehdr e_shoff CDATA #REQUIRED>
+<!ATTLIST ehdr e_flags CDATA #REQUIRED>
+<!ATTLIST ehdr e_ehsize CDATA #REQUIRED>
+<!ATTLIST ehdr e_phentsize CDATA #REQUIRED>
+<!ATTLIST ehdr e_phnum CDATA #REQUIRED>
+<!ATTLIST ehdr e_shentsize CDATA #REQUIRED>
+<!ATTLIST ehdr e_shnum CDATA #REQUIRED>
+<!ATTLIST ehdr e_shstrndx CDATA #REQUIRED>
+
+<!-- <!ELEMENT phdr (object)> --> 
+<!ATTLIST phdr p_type CDATA #REQUIRED>
+<!ATTLIST phdr p_offset CDATA #REQUIRED>
+<!ATTLIST phdr p_vaddr CDATA #REQUIRED>
+<!ATTLIST phdr p_paddr CDATA #REQUIRED>
+<!ATTLIST phdr p_filesz CDATA #REQUIRED>
+<!ATTLIST phdr p_memsz CDATA #REQUIRED>
+<!ATTLIST phdr p_flags CDATA #REQUIRED>
+<!ATTLIST phdr p_align CDATA #REQUIRED>
+
+<!ELEMENT shdr (object)>
+<!ELEMENT pht (object,phdr*)> 
+
+<!ELEMENT elf (ehdr,sht,pht,dynamic,)>
+<!ATTLIST elf md5  CDATA #REQUIRED>
+<!ATTLIST elf size CDATA #REQUIRED>
+<!ATTLIST elf name CDATA #REQUIRED>
+

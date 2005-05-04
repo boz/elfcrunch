@@ -1,0 +1,19 @@
+digraph test {
+ratio=fill
+fontsize=8
+fmain [ shape=box label=main ]
+ffoo [ shape=box label=foo ]
+ffprintf [ shape=box label=fprintf ]
+ffunc3 [ shape=box label=func3 ]
+ffunc2 [ shape=box label=func2 ]
+fprintf [ shape=box label=printf ]
+fexit [ shape=box label=exit ]
+fmain -> ffoo
+ffoo -> ffprintf
+fmain -> ffunc3
+ffunc3 -> ffunc2
+ffunc2 -> fprintf
+ffunc2 -> fexit
+ffunc2 -> ffoo
+ffunc3 -> ffunc3
+}

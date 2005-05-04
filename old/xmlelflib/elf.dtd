@@ -1,0 +1,12 @@
+<!-- dtd for an elf --> 
+
+<!ELEMENT object>
+<!ATTLIST object offset CDATA >     <!-- offset in file -->
+<!ATTLIST object vma    CDATA >     <!-- runtime vma    -->
+<!ATTLIST object size   CDATA >     <!-- size in bytes  -->
+
+<!ELEMENT elf >
+<!ATTLIST elf md5  CDATA #REQUIRED>
+<!ATTLIST elf size CDATA #REQUIRED>
+<!ATTLIST elf name CDATA #REQUIRED>
+
