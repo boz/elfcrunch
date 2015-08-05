@@ -1,3 +1,0 @@
-register_builtins.o: register_builtins.c builtins.h
-register_builtins.c :
-builtins.h :

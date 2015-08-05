@@ -1,2 +1,0 @@
-SUBDIRS = elflib asmelflib xmlelflib 
-
